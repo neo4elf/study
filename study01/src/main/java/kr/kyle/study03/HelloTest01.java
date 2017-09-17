@@ -24,6 +24,7 @@ public class HelloTest01 {
 	
 	public void hierarchicalApplicationContext() {
 		Hello hello = null;
+		ApplicationContext ctx = null;
 
 		ApplicationContext parent = new GenericXmlApplicationContext("classpath:/kr/kyle/study03/parent-context.xml");
 		GenericApplicationContext child = new GenericApplicationContext(parent);
@@ -36,9 +37,22 @@ public class HelloTest01 {
 		hello = parent.getBean("hello", Hello.class);
 		hello.print();
 		
+		ctx = hello.getContext();
+		
+		hello = ctx.getBean("hello", Hello.class);
+		hello.print();
+		
 		hello = child.getBean("hello", Hello.class);
 		hello.print();
 		
+		ctx = hello.getContext();
+		
+		hello = ctx.getBean("hello", Hello.class);
+		hello.print();
+
+		ctx = ctx.getParent();
+		hello = ctx.getBean("hello", Hello.class);
+		hello.print();
 	}
 	
 	public void genericApplicationContext() {

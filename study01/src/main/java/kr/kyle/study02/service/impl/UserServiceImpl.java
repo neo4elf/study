@@ -1,5 +1,7 @@
 package kr.kyle.study02.service.impl;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,7 @@ import kr.kyle.study02.service.UserService;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 	
-	@Autowired
+	@Resource(name="userDao")
 	private UserDAO userDao;
 
 	public int addUser(User user) {
