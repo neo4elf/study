@@ -22,6 +22,7 @@ public class EnumTest {
 	public static void main(String[] args) {
 
 
+		// enumeration test code
 		for (Type type:Type.values()) {
 			out.println("type : " + type);
 			out.println("type : " + type.getName());
