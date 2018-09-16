@@ -3,10 +3,8 @@ package kr.kyle.study01.tobi;
 import java.sql.SQLException;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import kr.kyle.study01.tobi.dao.DaoFactory;
 import kr.kyle.study01.tobi.dao.UserDao;
 import kr.kyle.study01.tobi.domain.User;
 
